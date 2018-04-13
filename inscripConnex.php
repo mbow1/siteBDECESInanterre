@@ -47,14 +47,20 @@
         <div id="FormulDinscription" class="form-group ">
             <form method="post" class="form-horizontal">
 
-                <input type="text" name="pseudo" class="form-control" placeholder="Votre Nom"/><br/>
+                <input type="text" name="nom" class="form-control" placeholder="Votre Nom"/><br/>
+                <input type="text" name="prenom" class="form-control" placeholder="Votre Prenom"/><br/>
                 <input type="password" name="passe" class="form-control" placeholder="Votre Mot de passe"/><br/>
                 <input type="password" name="passe2" class="form-control" placeholder="Confirmation du mot de passe"/><br/>
                 <input type="text" name="email" class="form-control" placeholder="Adresse e-mail CESI"/><br/>
                 <a type="submit" class="btn btn-primary" href="http://localhost/ProjetWeb/market.php">
                 <span class="glyphicon glyphicon-ok"></span> Valider
                 </a>
+
+                <div class="alert alert-danger" role="alert">
+                  <a href="#" class="alert-link">Votre mot de passe n'est pas valide !</a>
+                </div>
             </form>
+
         </div>
     </body>
 
