@@ -39,7 +39,7 @@
                 <div class="checkbox">
                     <label><input type="checkbox"> Se souvenir de moi !</label>
                 </div>
-
+                <br/>
                 <a type="submit" name="valider" value="Valider" class=" btn btn-primary" href="http://localhost/ProjetWeb/market.php"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider</a><br/>
 
             </form>
@@ -55,10 +55,16 @@
                 <a type="submit" class="btn btn-primary" href="http://localhost/ProjetWeb/market.php">
                 <span class="glyphicon glyphicon-ok"></span> Valider
                 </a>
+                <br/><br/>
 
-                <div class="alert alert-danger" role="alert">
-                  <a href="#" class="alert-link">Votre mot de passe n'est pas valide !</a>
-                </div>
+                <?php
+                $message = "";
+                echo '<div class="alert alert-danger" role="alert">
+                  <a href="#" class="alert-link">$message</a>
+                </div>';
+
+
+                ?>
             </form>
 
         </div>

@@ -7,7 +7,7 @@
 }
 }
 form{
-    margin-top: 20%;
+    margin-top: 10%;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -30,8 +30,8 @@ form{
 }
 
 body{
-     background-image: url("img/bk.jpg");
-    font-family: 'Roboto', sans-serif;
+     background-image: url("img/bk.jpg") ;
+     //background-size: 100%;
 
 }
 
@@ -64,6 +64,10 @@ body{
 
 }
 
+
+#btnAjout{
+    color: white;
+}
 #carous{
 
 }
@@ -83,4 +87,10 @@ body{
 .menu_page{
     text-align: left;
     display: inline-block;
+}
+
+
+
+.date-picker{
+    margin-top: 200px
 }

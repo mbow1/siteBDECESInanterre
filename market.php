@@ -31,7 +31,7 @@
                         <img src="img/img_market/1.jpg" width="150px" height="150px" class=" img_pr rounded float-left">
                         <h3> nom du produit</h3>
                                     <p>Description du produit ...</p>
-                                    <p > 30.2€ </p> <a class="btn btn-primary float-right">Ajouter  <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    <p > 30.2€ </p> <a class="btn btn-primary float-right" id="btnAjout">Ajouter  <span class="glyphicon glyphicon-shopping-cart"></span>
                             </a>
                             </div>
                     </div> ';

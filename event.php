@@ -16,7 +16,24 @@
 
          <!****************************** import ***************************************!>
 
-         <?php include("menu.php");          ?>
+
+
+         <?php
+
+
+
+
+        echo '<div class="date-picker"  data-date="2014/09/02" data-keyboard="true">
+                <div class="date-container pull-left">
+                    <h4 class="weekday">Monday</h4>
+                    <h2 class="date">Februray 4th</h2>
+                    <h4 class="year pull-right">2014</h4>
+                </div>';
+        include("menu.php");
+
+
+
+        ?>
 
 
         <title> Market </title>

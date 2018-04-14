@@ -6,7 +6,7 @@
        <div class="form-group">
             <input id="recherch" type="text" class="form-control" placeholder="Recherche">
                 </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Submit</button>
     <ul  class="nav navbar-nav menu_page">
       <li class="active float-left"><a href="#">Home</a></li>
       <li><a href="#">Boutique</a></li>
