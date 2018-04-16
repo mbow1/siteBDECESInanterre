@@ -61,8 +61,8 @@ body{
 
 .img_pr{
     margin: 10px 10px 10px 10px;
-
 }
+
 
 
 #btnAjout{
@@ -71,7 +71,7 @@ body{
 #carous{
     width: 100%;
     height: 100%;
-
+    margin-b
 }
 
 #footer{
@@ -92,7 +92,7 @@ body{
 }
 
 #Titre{
-    width: 500px;
+    width: 450px;
     display: inline-block;
 }
 
@@ -100,4 +100,9 @@ body{
     margin-top: 20px;
     color: aliceblue;
 
+}
+
+#descrip{
+    height: 100px;
+    text-align: right;
 }

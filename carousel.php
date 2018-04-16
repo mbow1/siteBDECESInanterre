@@ -15,7 +15,7 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner img-responsive">
       <div class="item active">
         <img src="img/img_event/3.jpg" alt="Los Angeles" style="width:100%; height: 700px;">
       </div>
@@ -25,7 +25,7 @@
       </div>
 
       <div class="item">
-        <img src="img/img_event/2.jpg" alt="New york" style="width:100%;;height: 700px;">
+        <img src="img/img_event/2.jpg" alt="New york" style="width:100%;;height: 700px">
       </div>
     </div>
 

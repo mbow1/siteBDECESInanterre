@@ -20,16 +20,12 @@
 
 
          <?php
+            include("menu.php");
 
-        include("menu.php");
-
-
-
-
-        ?>
+            ?>
 
 
-        <title> Market </title>
+        <title> Evénement </title>
     </head>
 
     <body class="container">
@@ -50,18 +46,42 @@
                 </div>';
 
         echo '<div id="Titre" class="pull-right">
+                <h2 class="pull-right">'.$lieu.'</h2>
+            </div>';
 
-             <h2 class="pull-right">'.$lieu.'</h2>
-
-
-                    </div>';
         echo '<h1 class="pull-right">'.$titre.'</h1><br>';
 
 
         include("carousel.php");
 
 
+
+
+            $description = "Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.";
+
+
+            echo '
+              <div class="row">
+                    <div class="form-group col-sm-7">
+                         <label for="comment">Comment:</label>
+                         <textarea class="form-control" rows="6" id="comment"></textarea>
+                          <a type="submit" class="btn btn-primary" href="#">
+                <span class="glyphicon glyphicon-ok"></span> Poster !! </a>
+                    </div>
+            <div  id="descrip" class = "col-sm-5">
+                <p>'.$description.'</p>
+
+                </div>
+            </div>
+
+            '
+                ;
+
+
+
         ?>
+
+
     </body>
 
     <footer>

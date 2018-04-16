@@ -58,9 +58,9 @@
                 <br/><br/>
 
                 <?php
-                $message = "";
+                $message = "Votre Mot de passe n'est pas bon !";
                 echo '<div class="alert alert-danger" role="alert">
-                  <a href="#" class="alert-link">$message</a>
+                  <a href="#" class="alert-link">'.$message.'</a>
                 </div>';
 
 
