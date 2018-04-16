@@ -47,16 +47,17 @@
                     <h1 class="date">'.$mois.'</h1>
                     <h4 class="year pull-right">'.$annee.'</h4>
                 </div>';
-        echo '<h1>.'$titre'.</h1>';
-        echo '<h2>'.$lieu.'</h2>';
+
+        echo '<div id="Titre" class="pull-right">
+            <h1 class="pull-right">'.$titre.'</h1> <br/>
+                    <h2 class="">'.$lieu.'</h2>
+                    </div>';
 
 
         include("carousel.php");
 
 
         ?>
-        <h1>.'$titre'.</h1>
-        <h2>'.$lieu.'</h2>
     </body>
 
     <footer>

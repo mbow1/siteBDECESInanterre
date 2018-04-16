@@ -89,7 +89,9 @@ body{
     display: inline-block;
 }
 
-
+#Titre{
+    width: 500px;
+}
 
 #DateEven{
     margin-top: 20px;
