@@ -14,6 +14,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 
+
          <!****************************** import ***************************************!>
 
 
@@ -49,9 +50,12 @@
                 </div>';
 
         echo '<div id="Titre" class="pull-right">
-            <h1 class="pull-right">'.$titre.'</h1> <br/>
-                    <h2 class="">'.$lieu.'</h2>
+
+             <h2 class="pull-right">'.$lieu.'</h2>
+
+
                     </div>';
+        echo '<h1 class="pull-right">'.$titre.'</h1><br>';
 
 
         include("carousel.php");

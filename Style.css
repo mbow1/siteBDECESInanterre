@@ -70,6 +70,8 @@ body{
 }
 #carous{
     width: 100%;
+    height: 100%;
+
 }
 
 #footer{
@@ -91,12 +93,11 @@ body{
 
 #Titre{
     width: 500px;
+    display: inline-block;
 }
 
 #DateEven{
     margin-top: 20px;
     color: aliceblue;
-    margin-left: 10px;
-    display: inline-block;
 
 }
