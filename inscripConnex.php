@@ -1,13 +1,19 @@
+<?php
+    try
+        {
+            $pdo = new PDO('mysql:host=localhost;dbname=BDD;charset=UTF-8', 'root', '');
+        }
+        catch (PDOException $e)
+        {
+            echo $e->getMessage();
+
+        }
+?>
 <!DOCTYPE html>
 <html>
     <head>
-      <!- <?php
-
-            include 'import.php';
-
-        ?> -!>
-  <!****************************** import ***************************************!>
-        0<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--****************************** import ***************************************!-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -18,10 +24,10 @@
 
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 
-  <!****************************** import ***************************************!>
+  <!--****************************** import ***************************************!-->
 
 
-        <title> Connextion, Inscriptionl</title>
+        <title> Connextion, Inscription</title>
       <img src="img/banner.png" id="banner">
     </head>
     <body class="container">
