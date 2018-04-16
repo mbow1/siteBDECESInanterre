@@ -20,16 +20,8 @@
 
          <?php
 
-
-
-
-        echo '<div class="date-picker"  data-date="2014/09/02" data-keyboard="true">
-                <div class="date-container pull-left">
-                    <h4 class="weekday">Monday</h4>
-                    <h2 class="date">Februray 4th</h2>
-                    <h4 class="year pull-right">2014</h4>
-                </div>';
         include("menu.php");
+
 
 
 
@@ -41,8 +33,30 @@
 
     <body class="container">
 
-      <?php include("carousel.php");          ?>
+      <?php
 
+        $jour = "Lundi";
+        $mois = " 16 Avril";
+        $annee = "2018";
+        $titre = "Boom Boom !!";
+        $lieu = "Miami, USA";
+
+        echo '<div class="date-picker" id="DateEven" data-date="2014/09/02" data-keyboard="true">
+                <div class="date-container pull-left">
+                    <h4 class="weekday">'.$jour.'</h4>
+                    <h1 class="date">'.$mois.'</h1>
+                    <h4 class="year pull-right">'.$annee.'</h4>
+                </div>';
+        echo '<h1>.'$titre'.</h1>';
+        echo '<h2>'.$lieu.'</h2>';
+
+
+        include("carousel.php");
+
+
+        ?>
+        <h1>.'$titre'.</h1>
+        <h2>'.$lieu.'</h2>
     </body>
 
     <footer>

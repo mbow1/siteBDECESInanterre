@@ -69,7 +69,7 @@ body{
     color: white;
 }
 #carous{
-
+    width: 100%;
 }
 
 #footer{
@@ -91,6 +91,10 @@ body{
 
 
 
-.date-picker{
-    margin-top: 200px
+#DateEven{
+    margin-top: 20px;
+    color: aliceblue;
+    margin-left: 10px;
+    display: inline-block;
+
 }
