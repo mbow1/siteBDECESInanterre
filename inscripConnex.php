@@ -1,10 +1,9 @@
 <?php
-    try
-        {
-            $pdo = new PDO('mysql:host=localhost;dbname=BDD;charset=UTF-8', 'root', '');
+
+    try{
+            $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
         }
-        catch (PDOException $e)
-        {
+        catch (PDOException $e){
             echo $e->getMessage();
 
         }
