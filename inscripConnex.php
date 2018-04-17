@@ -30,6 +30,8 @@ session_start();
                                 $reqmail->execute(array($mail));
                                 $mailexist = $reqmail->rowCount();
                                  if ($mailexist == 0){
+                                     $extrac = substr("$mailexist",-8);
+                                     if($extrac ="@cesi.fr"){
                                         if ( $passe == $passe2){
 
                                          ////////requete /////
@@ -40,6 +42,9 @@ session_start();
                                 } else {
                                    $message = "Vos mots de passe ne correspondent pas !!";
                                 }
+                                 }else{
+                                       $message = "Vous avez des admim batard  !!";
+                                     }
                                  } else {
                                      $message = "Adresse mail déjà utiliser";
                                  }
