@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    try{
+            $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
+        }
+        catch (PDOException $e){
+            echo $e->getMessage();
+        }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,18 +36,22 @@
     <body class="container">
 
          <?php
-           for ($i = 0 ; $i <= 20 ; $i++){
 
+        $sth = $pdo->prepare("SELECT ID_Produit, Nom_Produit, Image_Produit, Description_Produit,	Prix_Produit FROM produit");
+        $sth->execute();
+        $result = $sth->fetchAll();
+        //echo $result[0]['ID_Produit'];
+
+
+           for ($i = 1 ; $i <= 11 ; $i++){
 
                echo ' <div class="blackMarket col-xs-6 col-md-4" >
-                        <img src="img/img_market/1.jpg" width="150px" height="150px" class=" img_pr rounded float-left">
-                        <h3> nom du produit</h3>
-                                    <p>Description du produit ...</p>
-                                    <p > 30.2€ </p> <a class="btn btn-primary float-right" id="btnAjout">Ajouter  <span class="glyphicon glyphicon-shopping-cart"></span>
-                            </a>
+                        <img src="'.$result[$i]['Image_Produit'].'" width="150px" height="150px" class=" img_pr rounded float-left">
+                        <h3>'.$result[$i]['Nom_Produit'].'</h3>
+                                    <p>'.$result[$i]['Description_Produit'].'</p>
+                                    <p>'.$result[$i]['Prix_Produit'].' </p> <a class="btn btn-primary float-right" id="btnAjout">Ajouter  <span class="glyphicon glyphicon-shopping-cart"></span></a>
                             </div>
                     </div> ';
-
             }
           ?>
 
