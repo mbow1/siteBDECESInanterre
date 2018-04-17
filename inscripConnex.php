@@ -64,13 +64,13 @@ session_start();
         if (isset($_POST['validerconect'])){
             $mailConnect = htmlspecialchars($_POST['mailconect']);
             $passConnect = sha1($_POST['passeconectf']);
-            if(!empty($_POST['mailconect']) and !empty($_POST['mailconect'])){
+
+             if(!empty($_POST['mailconect']) and !empty($_POST['mailconect'])){
 
             } else {
                 $messageConnextion = "Merci de remplir tous les champs !";
             }
         }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -103,15 +103,19 @@ session_start();
                 <div class="checkbox"><label><input type="checkbox"> Se souvenir de moi !</label></div>
                 <br/>
                 <input type="submit" name="validerconect" value="Se Connecter" class=" btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><br/>
-            </form>
-        </div>
-
-            <?php
+                <br/>
+                <br/>
+                 <?php
                      if(isset($messageConnextion)){
                         echo '<div class="alert alert-danger" role="alert">
                             <a href="#" class="alert-link">'.$messageConnextion.'</a>
                             </div>';
+                     }
             ?>
+            </form>
+        </div>
+
+
 
         <div id="FormulDinscription" class="form-group ">
             <form method="POST" class="form-horizontal" action="">
@@ -121,9 +125,9 @@ session_start();
                 <input type="password" name="passe" class="form-control" placeholder="Votre Mot de passe"/><br/>
                 <input type="password" name="passe2" class="form-control" placeholder="Confirmation du mot de passe"/><br/>
                 <input type="email" name="email" class="form-control" placeholder="Adresse e-mail CESI"/><br/>
-
                 <input type="submit" name="ValiderInscription" class="btn btn-primary"  value="M'inscrire" ><span class="glyphicon glyphicon-ok"></span>
-                <br/><br/>
+                <br/>
+                <br/>
 
                 <?php
 
