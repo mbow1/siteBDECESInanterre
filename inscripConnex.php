@@ -1,4 +1,6 @@
 <?php
+
+<!--bonjours-->s
 session_start();
     try{
             $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
