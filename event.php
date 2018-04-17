@@ -1,3 +1,11 @@
+<?php
+    try{
+            $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
+        }
+    catch (PDOException $e){
+            echo $e->getMessage();
+        }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,6 +40,7 @@
 
       <?php
 
+
         $jour = "Lundi";
         $mois = " 16 Avril";
         $annee = "2018";
@@ -57,29 +66,35 @@
 
 
 
-            $description = "Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.";
+        echo '<p class=" pull-right">שלום, שמי גיזלן.
+אני ממש אוהבת לעשות משהו.</p>'
 
+      ?>
 
-            echo '
+          <form method="post" action="event.php">
               <div class="row">
-                    <div class="form-group col-sm-7">
+                    <div class="form-group col-sm-7" >
                          <label for="comment">Comment:</label>
-                         <textarea class="form-control" rows="6" id="comment"></textarea>
-                          <a type="submit" class="btn btn-primary" href="#">
-                <span class="glyphicon glyphicon-ok"></span> Poster !! </a>
+                         <textarea class="form-control" rows="6" id="comment" name ="commentaire" placeholder ="Tapez ici"></textarea>
+                          <input type="submit"  class="btn btn-primary" value="Poster !">
+                          <?php
+                            $commentaire = htmlspecialchars ($_POST['commentaire']);
+                            $oldcomments = $pdo->prepare("INSERT INTO user(Nom_User, Prenom_User,AdresseMail_User,MotDePasse_User) VALUES (?, ?, ?, ?)");
+                            $oldcomments->execute(array($nom,$prenom,$mail,$passe));
+                            echo $_POST['commentaire'];
+                            ?>
+
                     </div>
             <div  id="descrip" class = "col-sm-5">
-                <p>'.$description.'</p>
+
 
                 </div>
             </div>
 
-            '
-                ;
 
 
 
-        ?>
+  </form>
 
 
     </body>
@@ -88,3 +103,4 @@
 
 
     </footer>
+</html>
