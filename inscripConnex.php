@@ -6,7 +6,7 @@ session_start();
         catch (PDOException $e){
             echo $e->getMessage();
         }
-
+        //// Traitemennt Inscription  ////
         if (isset($_POST['ValiderInscription'])){
 
                 $nom = htmlspecialchars($_POST['nom']);
@@ -55,26 +55,33 @@ session_start();
                 $message = "Tous les champs doivent être complétés !";
             }
         }
+
+        //// Traitemennt inscription ////
+
+
+        ///// traitement Connexion /////
+
+        if (isset($_POST['validerconect'])){
+            $mailConnect = htmlspecialchars($_POST['mailconect']);
+            $passConnect = sha1($_POST['passeconectf']);
+            if(!empty($_POST['mailconect']) and !empty($_POST['mailconect'])){
+
+            } else {
+                $messageConnextion = "Merci de remplir tous les champs !";
+            }
+        }
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
   <!--****************************** import ***************************************!-->
-
-
-
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
         <link rel="stylesheet" type="text/css" href="Style.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
         <script type="text/javascript" src="js/main.js"></script>
-
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-
   <!--****************************** import ***************************************!-->
 
 
@@ -88,20 +95,24 @@ session_start();
         </button>
 
 
-
-        <div class="form-group " id="conect" >
+        <div class="form-group " id="conect">
             <form method="POST" class="form-horizontal" action="" >
                 <img class="logocesi" src="img/cesi-entreprise.png">
-                <input type="email" name="mail" class="form-control" placeholder="Entrer votre mail CESI"/><br/>
-                <input type="password" name="motDePasse" class="form-control" placeholder="Mots de Passe" /><br/>
-                <div class="checkbox">
-                    <label><input type="checkbox"> Se souvenir de moi !</label>
-                </div>
+                <input type="email" name="mailconect" class="form-control" placeholder="Entrer votre mail CESI"/><br/>
+                <input type="password" name="passeconectf" class="form-control" placeholder="Mots de Passe" /><br/>
+                <div class="checkbox"><label><input type="checkbox"> Se souvenir de moi !</label></div>
                 <br/>
-                <input type="submit" name="valider" value="Se Connecter" class=" btn btn-primary" href="http://localhost/ProjetWeb/market.php"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></input><br/>
-
+                <input type="submit" name="validerconect" value="Se Connecter" class=" btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><br/>
             </form>
         </div>
+
+            <?php
+                     if(isset($messageConnextion)){
+                        echo '<div class="alert alert-danger" role="alert">
+                            <a href="#" class="alert-link">'.$messageConnextion.'</a>
+                            </div>';
+            ?>
+
         <div id="FormulDinscription" class="form-group ">
             <form method="POST" class="form-horizontal" action="">
 
@@ -111,9 +122,7 @@ session_start();
                 <input type="password" name="passe2" class="form-control" placeholder="Confirmation du mot de passe"/><br/>
                 <input type="email" name="email" class="form-control" placeholder="Adresse e-mail CESI"/><br/>
 
-                <input type="submit" name="ValiderInscription" class="btn btn-primary"  value="M'inscrire" >
-                <span class="glyphicon glyphicon-ok"></span>
-                </input>
+                <input type="submit" name="ValiderInscription" class="btn btn-primary"  value="M'inscrire" ><span class="glyphicon glyphicon-ok"></span>
                 <br/><br/>
 
                 <?php
