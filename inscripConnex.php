@@ -111,6 +111,7 @@ session_start();
                         echo '<div class="alert alert-danger" role="alert">
                             <a href="#" class="alert-link">'.$messageConnextion.'</a>
                             </div>';
+                     }
             ?>
 
         <div id="FormulDinscription" class="form-group ">
@@ -151,8 +152,6 @@ session_start();
 
 
     </footer>
-
-
 
 
 
