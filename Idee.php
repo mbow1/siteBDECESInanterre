@@ -79,3 +79,40 @@ echo ' '.$_POST['sxt'];
     </body>
 
 </html>
+
+
+<meta charset="utf-8" />
+<?php
+	$bdd = new PDO('mysql:host=localhost;dbname=Web;charset=utf8', 'root', 'dylan');
+
+if(isset($_GET['ID_BoiteIdee']) AND !empty($_GET['ID_BoiteIdee'])){
+    $getid = htmlspecialchars($_GET['ID_BoiteIdee']);
+    $boite = $bdd->prepare('SELECT * FROM BoiteIdee WHERE ID_BoiteIdee = ? ');
+    $boite->execute(array($getid));
+    $boite = $boite->fetch();
+
+    if(isset($_POST['posteIdee'])) {
+        if(isset($_POST['Titre_Idee']) AND isset($_POST['Description_Idee']) AND !empty($_POST['Titre_Idee']) AND !empty($_POST['Description_Idee'])) {
+         $titreid = htmlspecialchars($_POST['Titre_Idee']);
+         $descriptionid = htmlspecialchars($_POST['Description_Idee']);
+
+    } else {
+         $c_msg = "Erreur: Tous les champs doivent être complétés";
+      }
+   }
+}
+
+?>
+<h2>BoiteIdee</h2>
+<p><?= $boite['contenu']?></p>
+<br />
+<h2>Description</h2>
+<form method="POST">
+   <input type="text" name="Titre_Idee" placeholder="Titre de l'idée" /><br />
+   <textarea name="Description_Idee" placeholder="Desciption de l'idée "></textarea>
+        <br/>
+   <input type="submit" value="Poste ton idée " name="submit_commentaire" />
+</form>
+<?php if(isset($c_erreur)){ echo "Erreur:".$c_erreur;}?>
+
+
