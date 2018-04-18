@@ -31,8 +31,8 @@ session_start();
                                         if ( $passe == $passe2){
 
                                          ////////requete /////
-                                        $inseruser = $pdo->prepare("INSERT INTO user(Nom_User, Prenom_User,AdresseMail_User,MotDePasse_User) VALUES (?, ?, ?, ?)");
-                                        $inseruser->execute(array($nom,$prenom,$mail,$passe));
+                                        $inseruser = $pdo->prepare("INSERT INTO user(Nom_User, Prenom_User,AdresseMail_User,MotDePasse_User, statut) VALUES (?, ?, ?, ?, ?)");
+                                        $inseruser->execute(array($nom,$prenom,$mail,$passe,1));
                                         /////////requete ///////////
                                         $messageBon = "Nickel, compte créé ";
                                 } else {
@@ -64,7 +64,7 @@ session_start();
 
         if (isset($_POST['validerconect'])){
             $mailConnect = htmlspecialchars($_POST['mailconect']);
-            $passConnect = sha1($_POST['passeconect']);
+         $passConnect = sha1($_POST['passeconect']);
 
              if(!empty($_POST['mailconect']) and !empty($_POST['mailconect'])){
                  ////////requete /////
@@ -88,6 +88,8 @@ session_start();
                 $messageConnextion = "Merci de remplir tous les champs !";
             }
         }
+
+        /////fin traitement connexion /////
 ?>
 <!DOCTYPE html>
 <html>
