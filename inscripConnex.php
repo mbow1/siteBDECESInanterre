@@ -61,12 +61,29 @@ session_start();
 
         ///// traitement Connexion /////
 
+
         if (isset($_POST['validerconect'])){
             $mailConnect = htmlspecialchars($_POST['mailconect']);
-            $passConnect = sha1($_POST['passeconectf']);
+            $passConnect = sha1($_POST['passeconect']);
 
              if(!empty($_POST['mailconect']) and !empty($_POST['mailconect'])){
+                 ////////requete /////
+                 $requser = $pdo->prepare("SELECT * FROM user WHERE AdresseMail_User = ? AND MotDePasse_User = ?");
+                 $requser->execute(array($mailConnect,$passConnect));
+                 $userexiste = $requser->rowCount();
 
+                  ////////requete /////
+                 if ($userexiste == 1){
+                     $userinfo = $requser->fetch();
+                     $_SESSION['id'] = $userinfo['ID_User'];
+                     $_SESSION['mail'] = $userinfo['AdresseMail_User'];
+                     $_SESSION['nom'] = $userinfo['Nom_User'];
+                     $_SESSION['prenom'] = $userinfo['Prenom_User'];
+                     header("Location: event.php?id=".$_SESSION['id']);
+
+                 }else{
+                      $messageConnextion = "Mauvais mail ou Mot de passe !";
+                 }
             } else {
                 $messageConnextion = "Merci de remplir tous les champs !";
             }
@@ -99,7 +116,7 @@ session_start();
             <form method="POST" class="form-horizontal" action="" >
                 <img class="logocesi" src="img/cesi-entreprise.png">
                 <input type="email" name="mailconect" class="form-control" placeholder="Entrer votre mail CESI"/><br/>
-                <input type="password" name="passeconectf" class="form-control" placeholder="Mots de Passe" /><br/>
+                <input type="password" name="passeconect" class="form-control" placeholder="Mots de Passe" /><br/>
                 <div class="checkbox"><label><input type="checkbox"> Se souvenir de moi !</label></div>
                 <br/>
                 <input type="submit" name="validerconect" value="Se Connecter" class=" btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><br/>
