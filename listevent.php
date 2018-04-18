@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <?php
+            include("menu.php");
+            try{
+            $pdo = new PDO('mysql:host=localhost;dbname=bdd;', 'root', 'exia');
+        }
+        catch (PDOException $e){
+            echo $e->getMessage();
+        }
+    ?>
     <head>
 
-         <!--****************************** import ***************************************-->
-           <meta name="viewport" content="width=device-width, initial-scale=1">
+         <!****************************** import ***************************************>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -15,19 +24,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 
 
-         <!--****************************** import ***************************************-->
-
-
-
-         <?php
-            include("menu.php");
-            try{
-            $pdo = new PDO('mysql:host=localhost;dbname=bdd;', 'root', 'exia');
-        }
-        catch (PDOException $e){
-            echo $e->getMessage();
-        }
-            ?>
+         <!****************************** import ***************************************>
 
 
         <title> Evénement </title>
@@ -45,7 +42,7 @@
             $pdo -> query($selectevent);
         ?>
         <?php
-        while($donnees = fetch($selectevent))
+        while ($donnees = fetch($selectevent))
             {
         ?>
                 <tr>
@@ -61,3 +58,4 @@
 
 
     </footer>
+</html>
