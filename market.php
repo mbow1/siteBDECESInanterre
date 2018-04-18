@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
     try{
             $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
         }
@@ -7,14 +7,18 @@
             echo $e->getMessage();
         }
 
-
+    if (isset($_GET['id']) and $_GET['id'] > 0){
+        $getid = intval($_GET['id']);
+        $requser = $pdo->prepare('SELECT * FROM user WHERE ID_User = ?');
+        $requser->execute(array($getid));
+        $userInfo->fetch();
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
 
-         <!****************************** import ***************************************!>
+         <!-****************************** import ***************************************!>
            <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -42,9 +46,7 @@
         $result = $sth->fetchAll();
         //echo $result[0]['ID_Produit'];
 
-
            for ($i = 1 ; $i <= 11 ; $i++){
-
                echo ' <div class="blackMarket col-xs-6 col-md-4" >
                         <img src="'.$result[$i]['Image_Produit'].'" width="150px" height="150px" class=" img_pr rounded float-left">
                         <h3>'.$result[$i]['Nom_Produit'].'</h3>
@@ -52,6 +54,7 @@
                                     <p>'.$result[$i]['Prix_Produit'].' </p> <a class="btn btn-primary float-right" id="btnAjout">Ajouter  <span class="glyphicon glyphicon-shopping-cart"></span></a>
                             </div>
                     </div> ';
+
             }
           ?>
 
@@ -68,3 +71,16 @@
 
 
 </html>
+<?php
+
+    } else {
+
+        /////////////////// il n'est pas connecter ////////////
+        echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">';
+
+
+    echo '<div class="alert alert-danger" role="alert">
+                            <a href="#" class="alert-link">Connectez-Vous !!</a>
+                            </div>';
+    }
+                            ?>
