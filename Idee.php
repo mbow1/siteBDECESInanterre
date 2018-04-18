@@ -62,8 +62,19 @@
         </div>
 
 
+<form method="post" >
+                        <label>You Text Here</label>
+                        <input type="text" name="sxt" id ="Text"/>
+                        <textarea name="description" placeholder="description"></textarea>
+                        <input type="submit" value="Poster" />
 
+        </form>
+ <?php
+if (isset($_POST['sxt'])) {
+echo ' '.$_POST['sxt'];
 
+    }
+?>
 
     </body>
 
