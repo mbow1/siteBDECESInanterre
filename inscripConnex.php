@@ -1,7 +1,7 @@
 <?php
 session_start();
     try{
-            $pdo = new PDO('mysql:host=localhost;dbname=bdd;', 'root', 'exia');
+            $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
         }
         catch (PDOException $e){
             echo $e->getMessage();
