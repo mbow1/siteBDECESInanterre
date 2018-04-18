@@ -38,19 +38,19 @@
                 <th>Dâte de l évènement</th>
             </tr>
         <?php
-            $selectevent = 'SELECT Titre_Event, Description_Event, Date_Event FROM evenement';
-            $pdo -> query($selectevent);
+            $selectevent = 'SELECT Titre_Event, Description_Event, DateEvent FROM evenement';
+            $test = $pdo -> query($selectevent);
         ?>
         <?php
-        while ($donnees = fetch($selectevent))
+        while ($donnees = $test->fetch())
             {
         ?>
                 <tr>
                     <td><?php echo $donnees['Titre_Event'];?></td>
                     <td><?php echo $donnees['Description_Event'];?></td>
-                    <td><?php echo $donnees['Date_Event'];?></td>
+                    <td><?php echo $donnees['DateEvent'];?></td>
                 </tr>
-            }
+           <?php } ?>
             </table>
     </body>
 
