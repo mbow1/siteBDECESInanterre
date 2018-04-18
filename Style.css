@@ -1,5 +1,9 @@
 @media screen and (max-width: 600px) {
-  form{
+ tr{
+    border: 3px;
+    color: aqua;
+}
+    form{
     margin-top: 1px;
     width: 300px;
     margin-left: auto;
@@ -106,3 +110,4 @@ body{
     height: 100px;
     text-align: right;
 }
+
