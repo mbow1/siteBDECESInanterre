@@ -43,7 +43,7 @@
                 </form>
 
     <?php
-    if(isset($c_msg)){echo "Erreur:".$c_msg;}
+    if(isset($c_msg)){echo ".$c_msg;}
      while ($donnees = $test->fetch())
      {
 
