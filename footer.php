@@ -1,6 +1,5 @@
-<nav aria-label="..." class="navbar-fixed-bottom">
-  <ul class="pager">
-    <li><a href="#">Previous</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</nav>
+   <!--Copyright-->
+    <div class="footer-copyright py-3 text-center" style=" background-color:  brown; font-size: 15px; color: white;" >
+        © 2018 Copyright: <a href="legal.php"> Mention légal </a>
+    </div>
+    <!--/.Copyright-->
