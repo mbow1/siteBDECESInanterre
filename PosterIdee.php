@@ -40,7 +40,9 @@
                            <textarea name="Description_Idee" placeholder="Votre Description_Idee..."></textarea><br />
                            <input type="submit" value="Poster " name="PosteIdee" />
                 </form>
+
     <?php
+    if(isset($c_msg)){echo "Erreur:".$c_msg;}
      while ($donnees = $test->fetch())
      {
 
