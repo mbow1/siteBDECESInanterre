@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
     try{
             $pdo = new PDO('mysql:host=localhost;dbname=BDD;', 'root', '');
@@ -30,8 +28,6 @@ session_start();
                                 $reqmail->execute(array($mail));
                                 $mailexist = $reqmail->rowCount();
                                  if ($mailexist == 0){
-                                     $extrac = substr("$mailexist",-8);
-                                     if($extrac ="@cesi.fr"){
                                         if ( $passe == $passe2){
 
                                          ////////requete /////
@@ -42,9 +38,6 @@ session_start();
                                 } else {
                                    $message = "Vos mots de passe ne correspondent pas !!";
                                 }
-                                 }else{
-                                       $message = "Vous avez des admim batard  !!";
-                                     }
                                  } else {
                                      $message = "Adresse mail déjà utiliser";
                                  }
@@ -82,6 +75,7 @@ session_start();
                   ////////requete /////
                  if ($userexiste == 1){
                      $userinfo = $requser->fetch();
+                     session_start();
                      $_SESSION['id'] = $userinfo['ID_User'];
                      $_SESSION['mail'] = $userinfo['AdresseMail_User'];
                      $_SESSION['nom'] = $userinfo['Nom_User'];
@@ -101,15 +95,14 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-  <!--****************************** import ***************************************!-->
+   <!--  import -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="Style.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-  <!--****************************** import ***************************************!-->
-
+   <!--  import -->
 
         <title> Connextion, Inscription</title>
       <img src="img/banner.png" id="banner">
@@ -179,6 +172,9 @@ session_start();
 
     <footer>
 
+         <?php
+            include("footer.php");
+            ?>
 
     </footer>
 
