@@ -21,5 +21,15 @@ $(document).ready(function() {
 
 
 
-
 });
+ /*$("#btnAjout1").click(function(){
+        var id = $("#btnAjout1").attr('id');
+        var cod = "<li>"+id+"</li>";
+        $("#panier").append(cod);
+
+});*/
+
+function addprod(prix){
+        var cod = '<li style="font-size: 17px;"> un produit a '+prix+' €</li>';
+     $("#panier").append(cod);
+}
