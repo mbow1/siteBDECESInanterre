@@ -20,8 +20,7 @@
                     {
                             die('Erreur : ' . $e->getMessage());
                     }
-                    $selectIdee = 'SELECT Titre_Idee, Description_Idee FROM BoiteIdee';
-                    $test = $bdd -> query($selectIdee);
+
      if(isset($_POST['PosteIdee'])) {
                     if(isset($_POST['Titre_Idee'],$_POST['Description_Idee']) AND !empty($_POST['Titre_Idee']) AND !empty($_POST['Description_Idee'])) {
                         $Titre_Idee = htmlspecialchars($_POST['Titre_Idee']);
@@ -34,6 +33,8 @@
                          $c_msg = "Erreur: Tous les champs doivent être complétés";
                       }
    }
+          $selectIdee = 'SELECT Titre_Idee, Description_Idee FROM BoiteIdee';
+          $test = $bdd -> query($selectIdee);
     ?>
                 <form method="POST">
                            <input type="text" name="Titre_Idee" placeholder="Votre Titre_Idee" /><br />
